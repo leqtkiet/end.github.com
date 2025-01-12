@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-08">
+        <title>ebook</title>
+        <style>
+            body{
+                background-color: blanchedalmond;
+            }
+            #r1{
+                position: absolute;
+                top:5%;
+                left: 20%; 
+                transform: translate(-50%, -50%);
+                color:white;
+                font-size: 30px; 
+                padding: 10px;
+                border-radius: 5px;
+                text-align: center;
+            }
+            #r2{
+                position: absolute;
+                top:5%;
+                left: 50%; 
+                transform: translate(-50%, -50%);
+                color:white; 
+                font-size: 30px; 
+                padding: 10px;
+                border-radius: 5px; 
+                text-align: center;
+            }
+            #r3{
+                position: absolute;
+                top:5%;
+                left: 80%;
+                transform: translate(-50%, -50%);
+                color:white; 
+                font-size: 30px;
+                padding: 10px;
+                border-radius: 5px; 
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+            }
+            #check{
+                transform: translate(-50%, -50%);
+                width: 10000px;
+                height: 100px;
+                display: block;
+            }
+            .clickable {
+                text-align: center;
+                font-size:25px;
+                text-decoration: none;
+                color: black;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+
+            .hidden-text {
+                font-size:18px;
+                display: none;
+                margin-top: 10px;
+                left:500px;
+                color: #333;
+            }
+            #text1{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="Untitled.png" id="check">
+        <p >
+            <a href="THKT.html" id="r1" >
+                Tổng hợp kiến thức
+            </a>
+            <a href="#" id="r2">
+                Tổng hợp đề
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" id="r3">
+                Hướng dẫn sử dụng
+            </a>
+        </p>
+
+        <script>
+            const clickableItems = document.querySelectorAll('.clickable');
+        
+            clickableItems.forEach(item => {
+              item.addEventListener('click', () => {
+                const targetId = item.getAttribute('data-target');
+                const allTexts = document.querySelectorAll('.hidden-text');
+                allTexts.forEach(text => text.style.display = 'none');
+                const targetText = document.getElementById(targetId);
+                if (targetText) {
+                  targetText.style.display = 'block';
+                }
+              });
+            });
+          </script>
+    </body>
+</html>
